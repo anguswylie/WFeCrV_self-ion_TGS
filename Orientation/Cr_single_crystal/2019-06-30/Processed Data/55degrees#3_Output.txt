@@ -1,0 +1,25 @@
+>> TGS_phase_analysis('Cr_single_crystal-2019-06-30-06.40um-55degrees#3-POS-1.txt','Cr_single_crystal-2019-06-30-06.40um-55degrees#3-NEG-1.txt',6.4,1)
+
+f2 = 
+
+     General model:
+     f2(x) = A.*(erfc(q*sqrt(k*(x+start_time)))-beta*exp(-q^2*k*(x+start_time)
+                    )./sqrt((x+start_time)))+B.*sin(2*pi*(peak_freq)*(x+
+                    start_time)+p)*exp(-(x+start_time)/t)+D
+     Coefficients (with 95% confidence bounds):
+       A =     0.01354  (0.01345, 0.01363)
+       k =   2.152e-05  (fixed at bound)
+       beta =   4.124e-14  (fixed at bound)
+       B =      0.0076  (0.007491, 0.007708)
+       p =       3.124  (3.113, 3.134)
+       t =   2.721e-08  (2.663e-08, 2.779e-08)
+       D =   0.0008485  (0.0008307, 0.0008663)
+     Problem parameters:
+       q =   9.817e+05
+       start_time =       9e-10
+       peak_freq =   5.497e+08
+Bad fit for:Cr_single_crystal-2019-06-30-06.40um-55degrees#3-POS-1.txt~re: alpha
+
+ans =
+
+   5.4974e+08
