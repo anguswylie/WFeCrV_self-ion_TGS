@@ -1,0 +1,20 @@
+cd 'C:\Users\apcwy\Dropbox (The University of Manchester)\Physics PhD\MIT_2022\TGS_Data\Sensitivity'
+unset label
+set tics font ",29"
+set xrange [0.5:4.5]
+set yrange [-3.5:5]
+set xlabel font ",29"
+set ylabel font ",29"
+set xtics 1
+set xlabel "Fit start point [half periods]" 
+set ylabel "θ" offset 2,0
+set term png size 1000,1000 enhanced font "Times,29"
+set key top left
+set output 'theta_peak_skip_sensitivity_baseline_adjusted.png'
+plot for [i=1:15] 'Tungsten_Parameter_Sweeping\Unirradiated_Tungsten-2022-01-10-06.40um-unirradiated_'.i.'_peak_skip_sensitivity.txt' using ($1-0.09):12 w p t (i==8?'Tungsten':'') lc rgb "#003f5c" pt 7 ps 1.2 lw 1, for [i=0:9] 'Chromium_Parameter_Sweeping\Angus-Crystals-Redo-Cr-Unirradiated-06.40um-spot'.i.'_peak_skip_sensitivity.txt' using ($1-0.03):12 w p t (i==8?'Chromium':'') lc rgb "#ffa600" pt 7 ps 1.2 lw 1, for [i=5:20] 'Iron_Parameter_Sweeping\IronIrradiated_Fe3plus-2022-01-04-06.40um-unirradiated_'.i.'_peak_skip_sensitivity.txt' using ($1+0.03):12 w p t (i==8?'Iron':'') lc rgb "#ff6361" pt 7 ps 1.2 lw 1, for [i=1:15] 'Vanadium_Parameter_Sweeping\VanadiumIrradiated_V3plus-2022-01-04-06.40um-unirradiated_'.i.'_peak_skip_sensitivity.txt' using ($1+0.09):12 w p t (i==8?'Vanadium':'') lc rgb "#bc5090" pt 7 ps 1.2 lw 1
+
+#Colour scheme for paper:
+#"Tungsten" "#003f5c" (blue)
+#"Iron" "#ff6361" (pink/orange)
+#'Chromium' "#ffa600" (yellow)
+#'Vanadium' "#bc5090" (purple)
