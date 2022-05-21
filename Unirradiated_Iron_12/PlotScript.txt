@@ -1,0 +1,13 @@
+set tics font ",39"
+set xrange [-5:200]
+set yrange [-5:70]
+set xlabel font ",39"
+set ylabel font ",39"
+set xlabel "Time [ns]" 
+set ylabel "Averaged diode response [mV]" offset 2,0
+#set logscale x 10
+#set format x "10^{%L}"
+set term png size 2000,1000 enhanced font "Times,39"
+set key top right
+set output 'C:\Users\apcwy\Dropbox (The University of Manchester)\Physics PhD\MIT_2022\TGS_Data\Data visualisation\Unirradiated_Iron_12\UnirradiatedIronFitPlot.png'
+plot 'C:\Users\apcwy\Dropbox (The University of Manchester)\Physics PhD\MIT_2022\TGS_Data\Data visualisation\Unirradiated_Iron_12\Unirradiated Iron Raw_TGS_Trace.txt' using 1:2 with lines title "Recorded signal" linecolor rgb "#ff6361" linewidth 3, 'C:\Users\apcwy\Dropbox (The University of Manchester)\Physics PhD\MIT_2022\TGS_Data\Data visualisation\Unirradiated_Iron_12\UnirradiatedIron12Fit.txt' using 1:2 with lines title "Functional fit" linewidth 3 linecolor rgb "#003f5c"
