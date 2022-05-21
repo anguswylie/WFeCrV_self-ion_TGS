@@ -1,0 +1,13 @@
+cd 'C:\Users\apcwy\Dropbox (The University of Manchester)\Physics PhD\MIT_2022\TGS_Data\Data visualisation\Unirradiated_Iron_6'
+set tics font ",29"
+set xrange [0:30]
+set yrange [-5:50]
+set xlabel font ",29"
+set ylabel font ",29"
+set xlabel "Time [ns]" 
+set ylabel "Averaged diode response [mV]" offset 2,0
+#set logscale x 10
+#set format x "10^{%L}"
+set term png size 1000,1000 enhanced font "Times,29"
+set output 'UnirradiatedIron6ZoomedPlot.png'
+plot 'Unirradiated Iron 6 Raw_TGS_Trace.txt' u 1:2 w l notitle lc rgb "black" linewidth 3

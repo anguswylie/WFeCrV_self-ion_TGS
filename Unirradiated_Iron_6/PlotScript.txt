@@ -1,0 +1,16 @@
+cd 'C:\Users\apcwy\Dropbox (The University of Manchester)\Physics PhD\MIT_2022\TGS_Data\Data visualisation\Unirradiated_Iron_6'
+set tics font ",27"
+set xrange [-5:60]
+set yrange [-5:50]
+set xlabel font ",27"
+set ylabel font ",27"
+set xlabel "Time [ns]" offset 0,0.5
+set ylabel "Averaged diode response [mV]" offset 2,0
+#set logscale x 10
+#set format x "10^{%L}"
+set for [i=1:5] linetype i dt i
+set term pngcairo font "Times New Roman,27" size 1000,1000 enhanced 
+set termoption dash
+set key at 59,49
+set output 'C:\Users\apcwy\Dropbox (The University of Manchester)\Physics PhD\MIT_2022\TGS_Data\Data visualisation\Unirradiated_Iron_6\UnirradiatedIron6FitPlot.png'
+plot 'Unirradiated Iron 6 Raw_TGS_Trace.txt' u 1:2 w l t "Recorded signal" lc rgb "black" lw 3, 'UnirradiatedIron6Fit.txt' u 1:2 w l lt 2 dt 4 lc rgb "#FF0000" lw 4 t "Functional fit", 'UnirradiatedIron6ThermalFit.txt' using 1:2 w l t "Thermal diffusivity fit" lw 3 lt 2 dt 10 lc rgb "#0006FF"
