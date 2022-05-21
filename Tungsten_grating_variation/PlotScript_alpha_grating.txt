@@ -1,0 +1,13 @@
+cd 'C:\Users\apcwy\Dropbox (The University of Manchester)\Physics PhD\MIT_2022\TGS_Data\Tungsten_grating_variation'
+unset label
+set tics font ",29"
+set xrange [5:10]
+set yrange [0:1]
+set xlabel font ",29"
+set xtics 1
+set ylabel font ",29"
+set xlabel "Nominal grating spacing [µm]" 
+set ylabel "Thermal diffusivity [cm^2s^{-1}]" offset 2,0
+set term png size 1000,1000 enhanced font "Times,29"
+set output 'alpha_depth_sensitivity.png'
+plot 'depth_study_tungsten.txt' using 1:($6*10000):($7*10000) with yerrorbars notitle lc rgb "#003f5c" pt 1 ps 1.2 lw 3

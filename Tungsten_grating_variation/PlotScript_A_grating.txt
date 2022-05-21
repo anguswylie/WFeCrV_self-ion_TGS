@@ -1,0 +1,21 @@
+cd 'C:\Users\apcwy\Dropbox (The University of Manchester)\Physics PhD\MIT_2022\TGS_Data\Tungsten_grating_variation'
+unset label
+set tics font ",29"
+set xrange [3:10]
+set yrange [-50:700]
+set xlabel font ",29"
+set xtics 1
+set ylabel font ",29"
+set xlabel "Nominal grating spacing [µm]" 
+set ylabel "A [mWm^{-2}]" offset 2,0
+set term png size 1000,1000 enhanced font "Times,29"
+#set label front "Tungsten\nChromium\nIron\nVanadium" at graph (0,0.1) tc rgb "black" offset 0,19 font "Times, 24"
+#set key top left
+set output 'A_depth_sensitivity.png'
+plot 'depth_study_tungsten.txt' using 1:($4*1000):($5*1000) with yerrorbars notitle lc rgb "#003f5c" pt 1 ps 1.2 lw 3
+
+#Colour scheme for paper:
+#"Tungsten" "#003f5c" (blue)
+#"Iron" "#ff6361" (pink/orange)
+#'Chromium' "#ffa600" (yellow)
+#'Vanadium' "#bc5090" (purple)
